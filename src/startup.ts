@@ -5,7 +5,7 @@ function onClickMenuItem()
 {
 	// Write code here that should happen when the player clicks the menu item under the map icon.
 	windowMain.open();
-	console.log([`${title} started`]);
+	console.log([`${title.get()} started`]);
 }
 
 
@@ -18,7 +18,7 @@ export function startup()
 	// Register a menu item under the map icon:
 	if (typeof ui !== "undefined")
 	{
-		console.log(["\x1b[1;33m" + `${title} initialized` + "\x1b[0m"]);
+		console.log(["\x1b[1;33m" + `${title.get()} initialized` + "\x1b[0m"]);
 		ui.registerMenuItem(menuLabel.get(), () => onClickMenuItem());
 	}
 }
