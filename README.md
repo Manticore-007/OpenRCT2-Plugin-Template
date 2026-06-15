@@ -1,6 +1,6 @@
 # Simple OpenRCT2 plugin template with Typescript
 
-A simple and minimal template for OpenRCT2 plugins, using Typescript, without any unnecessary extra's.
+A simple template for OpenRCT2 plugins that use windows, using Typescript.
 
 <img width="261" height="230" alt="image" src="https://github.com/user-attachments/assets/15079456-8573-4224-b98a-3083afd617f9" /> <img width="261" height="230" alt="image" src="https://github.com/user-attachments/assets/ed0b442b-e7af-4ac4-8513-b6599b48d7bb" /> <img width="259" height="230" alt="image" src="https://github.com/user-attachments/assets/4a15d746-b554-46cf-a067-504f3107945d" />
 
