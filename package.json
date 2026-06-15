@@ -1,6 +1,7 @@
 {
-	"name": "openrct2-typescript-plugin",
-	"version": "1.0.0",
+	"name": "openrct2-plugin-template",
+	"version": "2026.06.15",
+	"author": "Manticore-007",
 	"type": "module",
 	"license": "MIT",
 	"scripts": {
@@ -16,5 +17,8 @@
 		"nodemon": "^3.1.14",
 		"rollup": "^4.60.2",
 		"tslib": "^2.5.0"
+	},
+	"dependencies": {
+		"openrct2-flexui": "^0.1.0-prerelease.22"
 	}
 }

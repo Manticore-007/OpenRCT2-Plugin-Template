@@ -2,8 +2,8 @@ import { startup } from "./startup";
 
 registerPlugin({
 	name: "Name of your plugin",
-	version: "1.0",
-	authors: [ "Your name" ],
+	version: "2026.06.15",
+	authors: "Manticore-007",
 	type: "remote",
 	licence: "MIT",
 	/**

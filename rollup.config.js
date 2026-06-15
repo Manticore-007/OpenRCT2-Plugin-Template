@@ -1,17 +1,21 @@
 import resolve from "@rollup/plugin-node-resolve";
+import replace from "@rollup/plugin-replace";
 import terser from "@rollup/plugin-terser";
 import typescript from "@rollup/plugin-typescript";
 import { exec } from "node:child_process";
 import { homedir } from "node:os";
 import { promisify } from "node:util";
+import pkg from "./package.json" with { type: "json" };
 
+
+const build = process.env.BUILD || "development";
 
 const options =
 {
 	/**
 	 * Change the file name of the output file here.
 	 */
-	filename: "my-plugin.js",
+	filename: "plugin-template.js",
 
 	/**
 	 * Determines in what build mode the plugin should be build. The default here takes
@@ -71,6 +75,14 @@ const config = {
 	treeshake: "smallest",
 	plugins: [
 		resolve(),
+		replace({
+			include: "./src/environment.ts",
+			preventAssignment: true,
+			values: {
+				__PLUGIN_VERSION__: pkg.version,
+				__BUILD_CONFIGURATION__: build
+			}
+		}),
 		typescript(),
 		terser({
 			compress: {
