@@ -1,5 +1,5 @@
 import { button, checkbox, Colour, colourPicker, groupbox, horizontal, label, store, tab, tabwindow } from "openrct2-flexui";
-import { getColour, isPinned, pluginKeyString, setColour, setMenuItem } from "./settings";
+import { getColour, getWindow, isPinned, pluginKeyString, setColour, setMenuItem, title, window } from "./settings";
 import { isDevelopment, pluginVersion } from "./environment";
 
 const colourWindow =
@@ -100,7 +100,12 @@ export const windowMain = tabwindow({
 				label({ text: "https://github.com/Manticore-007\n/OpenRCT2-Plugin-Template", padding: ["90%", 0, 0, 0], alignment: "centred" })
 			]
 		}),
-    ]
+    ],
+    onOpen: () => window.set(getWindow(title.get())),
+    onUpdate: () => {
+        const win = window.get();
+        if (win) win.colours = [colourWindow.primary.get(), colourWindow.secondary.get()]
+    }
 });
 
 function versionString(): string
