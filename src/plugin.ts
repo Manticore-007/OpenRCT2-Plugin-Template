@@ -1,7 +1,8 @@
+import { title } from "./settings";
 import { startup } from "./startup";
 
 registerPlugin({
-	name: "Name of your plugin",
+	name: `${title.get()}`,
 	version: "2026.06.15",
 	authors: "Manticore-007",
 	type: "remote",
